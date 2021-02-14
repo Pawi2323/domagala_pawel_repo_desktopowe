@@ -806,7 +806,7 @@ public class PrzeliczanieJednostek extends javax.swing.JFrame {
             while(sc.hasNext()){
                 Tekst = Tekst+"\n"+sc.nextLine();
             }
-            JOptionPane.showMessageDialog(this,Tekst);
+            JOptionPane.showMessageDialog(this,Tekst,"Historia obliczeń",JOptionPane.PLAIN_MESSAGE);
         }
         catch(FileNotFoundException ex) {
             System.out.println(ex.toString());
