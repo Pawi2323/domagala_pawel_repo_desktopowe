@@ -5,17 +5,22 @@
  */
 package pl.com.pawel.domagala.domagala_pawel_13kalkulator;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author domag
  */
 public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
 
-    /**
-     * Creates new form domagala_pawel_13kalkulator
-     */
+    double liczba1;
+    double liczba2;
+    double wynik;
+    String typ;
+    
     public domagala_pawel_13kalkulator() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,7 +33,7 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
     private void initComponents() {
 
         pd_jPanel = new javax.swing.JPanel();
-        pd_jLabelWysw = new javax.swing.JLabel();
+        pd_jLabelWynik = new javax.swing.JLabel();
         pd_jButtonPusty = new javax.swing.JButton();
         pd_jButtonPierw = new javax.swing.JButton();
         pd_jButtonPotega = new javax.swing.JButton();
@@ -47,23 +52,26 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonPlus = new javax.swing.JButton();
         pd_jButtonClear = new javax.swing.JButton();
         pd_jButton0 = new javax.swing.JButton();
-        pd_jButtonPrzec = new javax.swing.JButton();
         pd_jButtonWynik = new javax.swing.JButton();
         pd_jSeparator = new javax.swing.JSeparator();
+        pd_jLabelWprow = new javax.swing.JLabel();
+        pd_jButtonPrzec = new javax.swing.JButton();
+        pd_jLabelWprowWysw = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         pd_jMenuPlik = new javax.swing.JMenu();
         pd_jCheckBoxMenuHistoria = new javax.swing.JCheckBoxMenuItem();
         pd_jMenuItemZamknij = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         pd_jPanel.setBackground(new java.awt.Color(0, 0, 0));
 
-        pd_jLabelWysw.setBackground(new java.awt.Color(0, 0, 0));
-        pd_jLabelWysw.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        pd_jLabelWysw.setForeground(new java.awt.Color(255, 255, 255));
-        pd_jLabelWysw.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        pd_jLabelWysw.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        pd_jLabelWynik.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWynik.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        pd_jLabelWynik.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jLabelWynik.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWynik.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         pd_jButtonPusty.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonPusty.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -77,6 +85,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonPierw.setText("√");
         pd_jButtonPierw.setToolTipText("");
         pd_jButtonPierw.setBorderPainted(false);
+        pd_jButtonPierw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPierwActionPerformed(evt);
+            }
+        });
 
         pd_jButtonPotega.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonPotega.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -84,6 +97,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonPotega.setText("^");
         pd_jButtonPotega.setToolTipText("");
         pd_jButtonPotega.setBorderPainted(false);
+        pd_jButtonPotega.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPotegaActionPerformed(evt);
+            }
+        });
 
         pd_jButtonDziel.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonDziel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -91,6 +109,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonDziel.setText("/");
         pd_jButtonDziel.setToolTipText("");
         pd_jButtonDziel.setBorderPainted(false);
+        pd_jButtonDziel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonDzielActionPerformed(evt);
+            }
+        });
 
         pd_jButton7.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -98,6 +121,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton7.setText("7");
         pd_jButton7.setToolTipText("");
         pd_jButton7.setBorderPainted(false);
+        pd_jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton7ActionPerformed(evt);
+            }
+        });
 
         pd_jButton8.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -105,6 +133,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton8.setText("8");
         pd_jButton8.setToolTipText("");
         pd_jButton8.setBorderPainted(false);
+        pd_jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton8ActionPerformed(evt);
+            }
+        });
 
         pd_jButton9.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -112,6 +145,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton9.setText("9");
         pd_jButton9.setToolTipText("");
         pd_jButton9.setBorderPainted(false);
+        pd_jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton9ActionPerformed(evt);
+            }
+        });
 
         pd_jButtonMnoz.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonMnoz.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -131,6 +169,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton4.setText("4");
         pd_jButton4.setToolTipText("");
         pd_jButton4.setBorderPainted(false);
+        pd_jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton4ActionPerformed(evt);
+            }
+        });
 
         pd_jButton5.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -138,6 +181,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton5.setText("5");
         pd_jButton5.setToolTipText("");
         pd_jButton5.setBorderPainted(false);
+        pd_jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton5ActionPerformed(evt);
+            }
+        });
 
         pd_jButton6.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -145,6 +193,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton6.setText("6");
         pd_jButton6.setToolTipText("");
         pd_jButton6.setBorderPainted(false);
+        pd_jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton6ActionPerformed(evt);
+            }
+        });
 
         pd_jButtonMinus.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonMinus.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -152,6 +205,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonMinus.setText("-");
         pd_jButtonMinus.setToolTipText("");
         pd_jButtonMinus.setBorderPainted(false);
+        pd_jButtonMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonMinusActionPerformed(evt);
+            }
+        });
 
         pd_jButton1.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -159,6 +217,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton1.setText("1");
         pd_jButton1.setToolTipText("");
         pd_jButton1.setBorderPainted(false);
+        pd_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton1ActionPerformed(evt);
+            }
+        });
 
         pd_jButton2.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -166,6 +229,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton2.setText("2");
         pd_jButton2.setToolTipText("");
         pd_jButton2.setBorderPainted(false);
+        pd_jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton2ActionPerformed(evt);
+            }
+        });
 
         pd_jButton3.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -173,6 +241,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton3.setText("3");
         pd_jButton3.setToolTipText("");
         pd_jButton3.setBorderPainted(false);
+        pd_jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton3ActionPerformed(evt);
+            }
+        });
 
         pd_jButtonPlus.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonPlus.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -180,6 +253,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonPlus.setText("+");
         pd_jButtonPlus.setToolTipText("");
         pd_jButtonPlus.setBorderPainted(false);
+        pd_jButtonPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPlusActionPerformed(evt);
+            }
+        });
 
         pd_jButtonClear.setBackground(new java.awt.Color(51, 51, 51));
         pd_jButtonClear.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -199,13 +277,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButton0.setText("0");
         pd_jButton0.setToolTipText("");
         pd_jButton0.setBorderPainted(false);
-
-        pd_jButtonPrzec.setBackground(new java.awt.Color(51, 51, 51));
-        pd_jButtonPrzec.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        pd_jButtonPrzec.setForeground(new java.awt.Color(255, 255, 255));
-        pd_jButtonPrzec.setText(".");
-        pd_jButtonPrzec.setToolTipText("");
-        pd_jButtonPrzec.setBorderPainted(false);
+        pd_jButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton0ActionPerformed(evt);
+            }
+        });
 
         pd_jButtonWynik.setBackground(new java.awt.Color(51, 153, 0));
         pd_jButtonWynik.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -213,77 +289,112 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jButtonWynik.setText("=");
         pd_jButtonWynik.setToolTipText("");
         pd_jButtonWynik.setBorderPainted(false);
+        pd_jButtonWynik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonWynikActionPerformed(evt);
+            }
+        });
 
         pd_jSeparator.setForeground(new java.awt.Color(51, 51, 51));
+
+        pd_jLabelWprow.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWprow.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
+        pd_jLabelWprow.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWprow.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        pd_jButtonPrzec.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPrzec.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPrzec.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButtonPrzec.setText(".");
+        pd_jButtonPrzec.setToolTipText("");
+        pd_jButtonPrzec.setBorderPainted(false);
+        pd_jButtonPrzec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPrzecActionPerformed(evt);
+            }
+        });
+
+        pd_jLabelWprowWysw.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWprowWysw.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jLabelWprowWysw.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jLabelWprowWysw.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWprowWysw.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout pd_jPanelLayout = new javax.swing.GroupLayout(pd_jPanel);
         pd_jPanel.setLayout(pd_jPanelLayout);
         pd_jPanelLayout.setHorizontalGroup(
             pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pd_jPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(8, 8, 8)
                 .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pd_jLabelWysw, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pd_jPanelLayout.createSequentialGroup()
-                        .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pd_jPanelLayout.createSequentialGroup()
-                                .addComponent(pd_jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(pd_jPanelLayout.createSequentialGroup()
-                                    .addComponent(pd_jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButtonMnoz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pd_jPanelLayout.createSequentialGroup()
-                                    .addComponent(pd_jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButtonMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pd_jPanelLayout.createSequentialGroup()
-                                    .addComponent(pd_jButtonPusty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButtonPierw, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButtonPotega, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(pd_jButtonDziel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(pd_jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pd_jPanelLayout.createSequentialGroup()
-                                .addComponent(pd_jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButtonPrzec, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pd_jButtonWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 9, Short.MAX_VALUE)))
+                        .addComponent(pd_jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pd_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pd_jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pd_jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pd_jPanelLayout.createSequentialGroup()
+                            .addComponent(pd_jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButtonMnoz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pd_jPanelLayout.createSequentialGroup()
+                            .addComponent(pd_jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButtonMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pd_jPanelLayout.createSequentialGroup()
+                            .addComponent(pd_jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButtonPierw, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButtonPotega, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pd_jButtonDziel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pd_jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pd_jPanelLayout.createSequentialGroup()
+                        .addComponent(pd_jButtonPusty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pd_jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pd_jButtonPrzec, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(pd_jButtonWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 9, Short.MAX_VALUE))
+            .addGroup(pd_jPanelLayout.createSequentialGroup()
+                .addComponent(pd_jLabelWprow, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pd_jLabelWynik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pd_jLabelWprowWysw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pd_jPanelLayout.setVerticalGroup(
             pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pd_jPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(pd_jLabelWysw, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pd_jLabelWprowWysw, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pd_jLabelWprow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pd_jLabelWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addComponent(pd_jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pd_jButtonPierw, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pd_jButtonPotega, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pd_jButtonDziel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pd_jButtonPusty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pd_jButtonPotega, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pd_jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pd_jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,12 +414,13 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
                     .addComponent(pd_jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pd_jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pd_jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pd_jButtonPrzec, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pd_jButtonWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pd_jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pd_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(pd_jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pd_jButtonWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pd_jButtonPrzec, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pd_jButtonPusty, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
         );
 
         pd_jMenuPlik.setText("Plik");
@@ -339,23 +451,178 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pd_jPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pd_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 467, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void pd_jButtonMnozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonMnozActionPerformed
-        // TODO add your handling code here:
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="*";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"*");
     }//GEN-LAST:event_pd_jButtonMnozActionPerformed
 
     private void pd_jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonClearActionPerformed
-        // TODO add your handling code here:
+        pd_jLabelWprow.setText("");
+        pd_jLabelWynik.setText("");
+        pd_jLabelWprowWysw.setText("");
     }//GEN-LAST:event_pd_jButtonClearActionPerformed
 
     private void pd_jMenuItemZamknijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jMenuItemZamknijActionPerformed
         System.exit(0);
     }//GEN-LAST:event_pd_jMenuItemZamknijActionPerformed
+
+    private void pd_jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton9ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton9.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"9");
+    }//GEN-LAST:event_pd_jButton9ActionPerformed
+
+    private void pd_jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton8ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton8.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"8");
+    }//GEN-LAST:event_pd_jButton8ActionPerformed
+
+    private void pd_jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton7ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton7.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"7");
+    }//GEN-LAST:event_pd_jButton7ActionPerformed
+
+    private void pd_jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton6ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton6.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"6");
+    }//GEN-LAST:event_pd_jButton6ActionPerformed
+
+    private void pd_jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton5ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton5.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"5");
+    }//GEN-LAST:event_pd_jButton5ActionPerformed
+
+    private void pd_jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton4ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton4.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"4");
+    }//GEN-LAST:event_pd_jButton4ActionPerformed
+
+    private void pd_jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton3ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton3.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"3");
+    }//GEN-LAST:event_pd_jButton3ActionPerformed
+
+    private void pd_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton2ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton2.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"2");
+    }//GEN-LAST:event_pd_jButton2ActionPerformed
+
+    private void pd_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton1ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton1.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"1");
+    }//GEN-LAST:event_pd_jButton1ActionPerformed
+
+    private void pd_jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton0ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton0.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"0");
+    }//GEN-LAST:event_pd_jButton0ActionPerformed
+
+    private void pd_jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPlusActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="+";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"+");
+    }//GEN-LAST:event_pd_jButtonPlusActionPerformed
+
+    private void pd_jButtonMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonMinusActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="-";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"-");
+    }//GEN-LAST:event_pd_jButtonMinusActionPerformed
+
+    private void pd_jButtonDzielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonDzielActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="/";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"/");
+    }//GEN-LAST:event_pd_jButtonDzielActionPerformed
+
+    private void pd_jButtonPotegaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPotegaActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="^";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"^");
+    }//GEN-LAST:event_pd_jButtonPotegaActionPerformed
+
+    private void pd_jButtonPierwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPierwActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="√";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"√");
+    }//GEN-LAST:event_pd_jButtonPierwActionPerformed
+
+    private void pd_jButtonWynikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonWynikActionPerformed
+        String a;
+        if(typ == "+"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 + liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "-"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 - liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "*"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 * liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "/"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 / liczba2;
+            a = String.format("%.2f",wynik);
+            try{
+                if(liczba2 == 0 || liczba1 == 0){
+                    pd_jLabelWynik.setText("Błąd");
+                }else{
+                    pd_jLabelWynik.setText(a);
+                }
+            }catch(Exception ex) {
+            System.out.println(ex.toString());
+            }
+        }else if(typ == "√"){
+            wynik = Math.sqrt(liczba1);
+            a = String.format("%.2f",wynik);
+            try{
+                if(liczba1 == 0){
+                    pd_jLabelWynik.setText("Błąd");
+                }else{
+                    pd_jLabelWynik.setText(a);
+                }
+            }catch(Exception ex) {
+            System.out.println(ex.toString());
+            }
+        }else if(typ == "^"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = Math.pow(liczba1,liczba2);
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }
+    }//GEN-LAST:event_pd_jButtonWynikActionPerformed
+
+    private void pd_jButtonPrzecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPrzecActionPerformed
+        pd_jLabelWprow.setText(pd_jLabelWprow.getText()+".");
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+".");
+    }//GEN-LAST:event_pd_jButtonPrzecActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,6 +650,13 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(domagala_pawel_13kalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -391,7 +665,8 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JButton pd_jButton0;
@@ -415,7 +690,9 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
     private javax.swing.JButton pd_jButtonPusty;
     private javax.swing.JButton pd_jButtonWynik;
     private javax.swing.JCheckBoxMenuItem pd_jCheckBoxMenuHistoria;
-    private javax.swing.JLabel pd_jLabelWysw;
+    private javax.swing.JLabel pd_jLabelWprow;
+    private javax.swing.JLabel pd_jLabelWprowWysw;
+    private javax.swing.JLabel pd_jLabelWynik;
     private javax.swing.JMenuItem pd_jMenuItemZamknij;
     private javax.swing.JMenu pd_jMenuPlik;
     private javax.swing.JPanel pd_jPanel;

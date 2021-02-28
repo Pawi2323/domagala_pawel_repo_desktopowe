@@ -36,6 +36,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -62,7 +63,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pd_jPanel" alignment="1" max="32767" attributes="0"/>
+          <Component id="pd_jPanel" pref="467" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -78,62 +79,65 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="pd_jLabelWysw" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="pd_jButton1" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButton2" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButton3" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButtonPlus" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="pd_jButton7" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButton8" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButton9" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButtonMnoz" min="-2" pref="50" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="pd_jButton4" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButton5" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButton6" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButtonMinus" min="-2" pref="50" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="pd_jButtonPusty" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButtonPierw" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButtonPotega" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="pd_jButtonDziel" min="-2" pref="50" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="pd_jSeparator" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="pd_jButtonClear" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButton0" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButtonPrzec" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pd_jButtonWynik" min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
+                          <Component id="pd_jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pd_jButton2" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pd_jButton3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pd_jButtonPlus" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="pd_jButton7" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButton8" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButton9" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButtonMnoz" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="pd_jButton4" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButton5" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButton6" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButtonMinus" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="pd_jButtonClear" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButtonPierw" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButtonPotega" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="pd_jButtonDziel" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="pd_jSeparator" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="pd_jButtonPusty" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pd_jButton0" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="pd_jButtonPrzec" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="pd_jButtonWynik" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="pd_jLabelWprow" min="-2" pref="5" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="pd_jLabelWynik" max="32767" attributes="0"/>
+                      <Component id="pd_jLabelWprowWysw" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -142,16 +146,21 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="pd_jLabelWysw" min="-2" pref="63" max="-2" attributes="0"/>
-                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="pd_jLabelWprowWysw" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="pd_jLabelWprow" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="pd_jLabelWynik" min="-2" pref="63" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="pd_jSeparator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="pd_jButtonPierw" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="pd_jButtonPotega" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="pd_jButtonDziel" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="pd_jButtonPusty" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="pd_jButtonPotega" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="pd_jButtonClear" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -175,25 +184,27 @@
                       <Component id="pd_jButton1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="pd_jButton0" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="pd_jButtonPrzec" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="pd_jButtonWynik" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="pd_jButtonClear" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="pd_jButton0" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="pd_jButtonWynik" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="pd_jButtonPrzec" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="pd_jButtonPusty" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="pd_jLabelWysw">
+        <Component class="javax.swing.JLabel" name="pd_jLabelWynik">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="0"/>
+              <Font name="Tahoma" size="36" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -232,6 +243,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonPierwActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonPotega">
           <Properties>
@@ -248,6 +262,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonPotegaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonDziel">
           <Properties>
@@ -264,6 +281,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonDzielActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton7">
           <Properties>
@@ -280,6 +300,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton7ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton8">
           <Properties>
@@ -296,6 +319,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton8ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton9">
           <Properties>
@@ -312,6 +338,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton9ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonMnoz">
           <Properties>
@@ -347,6 +376,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton5">
           <Properties>
@@ -363,6 +395,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton5ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton6">
           <Properties>
@@ -379,6 +414,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton6ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonMinus">
           <Properties>
@@ -395,6 +433,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonMinusActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton1">
           <Properties>
@@ -411,6 +452,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton2">
           <Properties>
@@ -427,6 +471,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButton3">
           <Properties>
@@ -443,6 +490,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonPlus">
           <Properties>
@@ -459,6 +509,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonPlusActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonClear">
           <Properties>
@@ -494,22 +547,9 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="pd_jButtonPrzec">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="."/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="borderPainted" type="boolean" value="false"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButton0ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pd_jButtonWynik">
           <Properties>
@@ -526,12 +566,61 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonWynikActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="pd_jSeparator">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="pd_jLabelWprow">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="1" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="pd_jButtonPrzec">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="."/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="borderPainted" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pd_jButtonPrzecActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="pd_jLabelWprowWysw">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
       </SubComponents>
