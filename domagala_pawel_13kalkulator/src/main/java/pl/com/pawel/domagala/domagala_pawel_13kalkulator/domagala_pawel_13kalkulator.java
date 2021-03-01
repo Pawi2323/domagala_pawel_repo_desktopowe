@@ -6,6 +6,7 @@
 package pl.com.pawel.domagala.domagala_pawel_13kalkulator;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
@@ -642,7 +643,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
 
     private void jMenuDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDniActionPerformed
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
-        JOptionPane.showInputDialog("Wprowadz date w formacie dd MM yyyy (np. 01 01 2021)");
+        String data = JOptionPane.showInputDialog("Wprowadz date w formacie dd MM yyyy (np. 01 01 2021)");
+        System.out.println(data);
+        LocalDate ldNow = LocalDate.now();
+        LocalDate ldInput = LocalDate.parse(data, formatter);//Tekst -> LocalDate przez format
+        System.out.println(ldNow+" "+ldInput);
     }//GEN-LAST:event_jMenuDniActionPerformed
 
     /**
