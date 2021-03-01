@@ -61,6 +61,8 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jMenuPlik = new javax.swing.JMenu();
         pd_jCheckBoxMenuHistoria = new javax.swing.JCheckBoxMenuItem();
         pd_jMenuItemZamknij = new javax.swing.JMenuItem();
+        pd_jMenuTools = new javax.swing.JMenu();
+        jMenuDni = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -441,6 +443,13 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
 
         jMenuBar1.add(pd_jMenuPlik);
 
+        pd_jMenuTools.setText("Tools");
+
+        jMenuDni.setText("Ile dni od obliczenia");
+        pd_jMenuTools.add(jMenuDni);
+
+        jMenuBar1.add(pd_jMenuTools);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -669,6 +678,7 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuDni;
     private javax.swing.JButton pd_jButton0;
     private javax.swing.JButton pd_jButton1;
     private javax.swing.JButton pd_jButton2;
@@ -695,6 +705,7 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
     private javax.swing.JLabel pd_jLabelWynik;
     private javax.swing.JMenuItem pd_jMenuItemZamknij;
     private javax.swing.JMenu pd_jMenuPlik;
+    private javax.swing.JMenu pd_jMenuTools;
     private javax.swing.JPanel pd_jPanel;
     private javax.swing.JSeparator pd_jSeparator;
     // End of variables declaration//GEN-END:variables
