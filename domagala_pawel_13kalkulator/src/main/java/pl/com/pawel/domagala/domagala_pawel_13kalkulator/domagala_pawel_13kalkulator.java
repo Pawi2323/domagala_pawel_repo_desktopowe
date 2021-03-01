@@ -6,6 +6,8 @@
 package pl.com.pawel.domagala.domagala_pawel_13kalkulator;
 
 import java.io.FileNotFoundException;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -446,6 +448,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jMenuTools.setText("Tools");
 
         jMenuDni.setText("Ile dni od obliczenia");
+        jMenuDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDniActionPerformed(evt);
+            }
+        });
         pd_jMenuTools.add(jMenuDni);
 
         jMenuBar1.add(pd_jMenuTools);
@@ -632,6 +639,11 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         pd_jLabelWprow.setText(pd_jLabelWprow.getText()+".");
         pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+".");
     }//GEN-LAST:event_pd_jButtonPrzecActionPerformed
+
+    private void jMenuDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDniActionPerformed
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        JOptionPane.showInputDialog("Wprowadz date w formacie dd MM yyyy (np. 01 01 2021)");
+    }//GEN-LAST:event_jMenuDniActionPerformed
 
     /**
      * @param args the command line arguments
