@@ -651,6 +651,7 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         //System.out.println(ldNow+" "+ldInput);
         long days = ChronoUnit.DAYS.between(ldInput, ldNow);
         //System.out.println("Ilość dni między datami: "+days);
+        JOptionPane.showMessageDialog(rootPane, ""+days, "Ilość dni", HEIGHT);
     }//GEN-LAST:event_jMenuDniActionPerformed
 
     /**
