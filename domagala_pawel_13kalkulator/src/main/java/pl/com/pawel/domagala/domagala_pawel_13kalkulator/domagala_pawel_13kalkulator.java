@@ -646,12 +646,14 @@ public class domagala_pawel_13kalkulator extends javax.swing.JFrame {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
         String data = JOptionPane.showInputDialog("Wprowadz date w formacie dd MM yyyy (np. 01 01 2021)");
         //System.out.println(data);
-        LocalDate ldNow = LocalDate.now();
-        LocalDate ldInput = LocalDate.parse(data, formatter);//Tekst -> LocalDate przez format
-        //System.out.println(ldNow+" "+ldInput);
-        long days = ChronoUnit.DAYS.between(ldInput, ldNow);
-        //System.out.println("Ilość dni między datami: "+days);
-        JOptionPane.showMessageDialog(rootPane, ""+days, "Ilość dni", HEIGHT);
+        if(data != null && data.length()==10){
+            LocalDate ldNow = LocalDate.now();
+            LocalDate ldInput = LocalDate.parse(data, formatter);//Tekst -> LocalDate przez format
+            //System.out.println(ldNow+" "+ldInput);
+            long days = ChronoUnit.DAYS.between(ldInput, ldNow);
+            //System.out.println("Ilość dni między datami: "+days);
+            JOptionPane.showMessageDialog(rootPane, ""+days, "Ilość dni", HEIGHT);
+            }
     }//GEN-LAST:event_jMenuDniActionPerformed
 
     /**
