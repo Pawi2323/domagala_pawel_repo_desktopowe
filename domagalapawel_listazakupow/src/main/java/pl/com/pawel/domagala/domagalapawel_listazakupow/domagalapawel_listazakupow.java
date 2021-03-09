@@ -20,6 +20,8 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
     public domagalapawel_listazakupow() {
         initComponents();
         addKeyListenerCoKupiles();
+        addKeyListenerjPodajWartosc();
+        addKeyListenerData();
     }
 
     /**
@@ -125,8 +127,8 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
                         .addGap(77, 77, 77)
                         .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelDataZakupu, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                            .addComponent(jTextFieldDataZakupu)
-                            .addComponent(jButtonZapisz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButtonZapisz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldDataZakupu)))
                     .addGroup(jPanelWprowadzLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,11 +151,13 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
                         .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldWpiszCoKupiles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldPodajWartosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxTypTowaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldDataZakupu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxTypTowaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addComponent(jLabelZakupy))
-                    .addComponent(jButtonZapisz))
+                    .addGroup(jPanelWprowadzLayout.createSequentialGroup()
+                        .addComponent(jTextFieldDataZakupu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonZapisz)))
                 .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelWprowadzLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -273,14 +277,41 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
             }
         });           
     }
+    private void addKeyListenerData(){
+      jTextFieldDataZakupu.addKeyListener(new KeyListener(){
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char ch = e.getKeyChar();
+                if(ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE){
+                jTextFieldDataZakupu.setEditable(true);
+                    System.out.println("Nacisnieto cyfre "+ch);
+                }else{
+                jTextFieldDataZakupu.setEditable(false);
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });  
+    }
     
     private void addKeyListenerjPodajWartosc(){
         jTextFieldPodajWartosc.addKeyListener(new KeyListener(){
             @Override
             public void keyTyped(KeyEvent e) {
                 char ch = e.getKeyChar();
-                if(ch == '0'||ch == '1'||ch == '2'||ch == '3'||ch == '4'||ch == '5'||ch == '6'||ch == '7'||ch == '8'||ch == '9'){
-                    System.out.println("Nacisnieto cyfre"+ch);
+                if(ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE){
+                jTextFieldPodajWartosc.setEditable(true);
+                    System.out.println("Nacisnieto cyfre "+ch);
+                }else{
+                jTextFieldPodajWartosc.setEditable(false);
                 }
             }
 

@@ -98,8 +98,8 @@
                               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelDataZakupu" pref="95" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldDataZakupu" max="32767" attributes="0"/>
                                   <Component id="jButtonZapisz" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldDataZakupu" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -131,12 +131,15 @@
                                   <Component id="jTextFieldWpiszCoKupiles" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldPodajWartosc" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBoxTypTowaru" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldDataZakupu" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="jLabelZakupy" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButtonZapisz" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jTextFieldDataZakupu" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonZapisz" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
