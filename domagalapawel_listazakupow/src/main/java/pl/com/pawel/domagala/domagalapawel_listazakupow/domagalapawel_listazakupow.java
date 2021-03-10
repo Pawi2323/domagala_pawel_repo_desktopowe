@@ -40,7 +40,6 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
         jLabelPodajWartosc = new javax.swing.JLabel();
         jTextFieldPodajWartosc = new javax.swing.JTextField();
         jLabelZakupy = new javax.swing.JLabel();
-        jTextFieldZakupy = new javax.swing.JTextField();
         jLabelTypTowaru = new javax.swing.JLabel();
         jComboBoxTypTowaru = new javax.swing.JComboBox<>();
         jLabelDataZakupu = new javax.swing.JLabel();
@@ -50,6 +49,8 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
         jTextFieldWydatkiDzisiaj = new javax.swing.JTextField();
         jLabelWydatkiTydzien = new javax.swing.JLabel();
         jTextFieldWydatkiTydzien = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaZakupy = new javax.swing.JTextArea();
         jPanelLista = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -88,6 +89,11 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
 
         jButtonZapisz.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         jButtonZapisz.setText("Zapisz");
+        jButtonZapisz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZapiszActionPerformed(evt);
+            }
+        });
 
         jLabelWydatkiDzisiaj.setText("Wydatki z dzisiaj:");
 
@@ -97,24 +103,29 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
 
         jTextFieldWydatkiTydzien.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
 
+        jTextAreaZakupy.setColumns(20);
+        jTextAreaZakupy.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaZakupy);
+
         javax.swing.GroupLayout jPanelWprowadzLayout = new javax.swing.GroupLayout(jPanelWprowadz);
         jPanelWprowadz.setLayout(jPanelWprowadzLayout);
         jPanelWprowadzLayout.setHorizontalGroup(
             jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelWprowadzLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextFieldZakupy)
-                    .addComponent(jLabelZakupy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanelWprowadzLayout.createSequentialGroup()
-                        .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelWpiszCoKupiles, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(jTextFieldWpiszCoKupiles))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelPodajWartosc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldPodajWartosc))))
-                .addGap(18, 18, 18)
+                .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabelZakupy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelWprowadzLayout.createSequentialGroup()
+                            .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelWpiszCoKupiles, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                .addComponent(jTextFieldWpiszCoKupiles))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelPodajWartosc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldPodajWartosc))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelTypTowaru, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxTypTowaru, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -160,9 +171,6 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
                         .addComponent(jButtonZapisz)))
                 .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelWprowadzLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldZakupy, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelWprowadzLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelWydatkiDzisiaj)
@@ -170,8 +178,12 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelWprowadzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelWydatkiTydzien)
-                            .addComponent(jTextFieldWydatkiTydzien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                            .addComponent(jTextFieldWydatkiTydzien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelWprowadzLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         jTabbedPane.addTab("Wprowadź zakupy", jPanelWprowadz);
@@ -219,6 +231,10 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldWpiszCoKupilesKeyTyped
 
+    private void jButtonZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZapiszActionPerformed
+        Button();
+    }//GEN-LAST:event_jButtonZapiszActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,12 +274,13 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
         jTextFieldWpiszCoKupiles.addKeyListener(new KeyListener(){
             @Override
             public void keyTyped(KeyEvent e) {
-                
-                
-                
-                if(e.getKeyChar() == KeyEvent.VK_ENTER)
-                System.out.println("Wprowadzono dane po nacisnieciu entera");
-                jTextFieldZakupy.setText(jTextFieldWpiszCoKupiles.getText());
+              char ch = e.getKeyChar();
+                if((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || ch == 32 || ch == 8){
+                    jTextFieldWpiszCoKupiles.setEditable(true);
+                    System.out.println("Nacisnieto znak "+ch);
+                }else{
+                    jTextFieldWpiszCoKupiles.setEditable(false);
+                }  
             }
 
             @Override
@@ -282,11 +299,11 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
                 char ch = e.getKeyChar();
-                if(ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE){
-                jTextFieldDataZakupu.setEditable(true);
+                if(ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE || ch == 45){
+                    jTextFieldDataZakupu.setEditable(true);
                     System.out.println("Nacisnieto cyfre "+ch);
                 }else{
-                jTextFieldDataZakupu.setEditable(false);
+                    jTextFieldDataZakupu.setEditable(false);
                 }
             }
 
@@ -307,11 +324,11 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
                 char ch = e.getKeyChar();
-                if(ch >= '0' && ch <= '9' || ch==KeyEvent.VK_BACK_SPACE){
-                jTextFieldPodajWartosc.setEditable(true);
+                if(ch >= '0' && ch <= '9' || ch== 32 ){
+                    jTextFieldPodajWartosc.setEditable(true);
                     System.out.println("Nacisnieto cyfre "+ch);
                 }else{
-                jTextFieldPodajWartosc.setEditable(false);
+                    jTextFieldPodajWartosc.setEditable(false);
                 }
             }
 
@@ -326,6 +343,15 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void Button(){
+        jTextAreaZakupy.setText(jTextAreaZakupy.getText()+jTextFieldWpiszCoKupiles.getText()+";"+jTextFieldPodajWartosc.getText()+";"+jComboBoxTypTowaru.getSelectedItem()+";"+jTextFieldDataZakupu.getText()+"\n");
+        jTextFieldWpiszCoKupiles.setText("");
+        jTextFieldPodajWartosc.setText("");
+        jTextFieldDataZakupu.setText("");
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonZapisz;
@@ -342,12 +368,13 @@ public class domagalapawel_listazakupow extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelLista;
     private javax.swing.JPanel jPanelWprowadz;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane;
+    private javax.swing.JTextArea jTextAreaZakupy;
     private javax.swing.JTextField jTextFieldDataZakupu;
     private javax.swing.JTextField jTextFieldPodajWartosc;
     private javax.swing.JTextField jTextFieldWpiszCoKupiles;
     private javax.swing.JTextField jTextFieldWydatkiDzisiaj;
     private javax.swing.JTextField jTextFieldWydatkiTydzien;
-    private javax.swing.JTextField jTextFieldZakupy;
     // End of variables declaration//GEN-END:variables
 }
