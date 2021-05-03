@@ -13,6 +13,7 @@ import java.awt.event.KeyListener;
  * @author domag
  */
 public class logowanie_i_rejestracja extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form logowanie_i_rejestracja
@@ -20,6 +21,7 @@ public class logowanie_i_rejestracja extends javax.swing.JFrame {
     public logowanie_i_rejestracja() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -31,6 +33,7 @@ public class logowanie_i_rejestracja extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollBar1 = new javax.swing.JScrollBar();
         jTabbedPaneRejestracja = new javax.swing.JTabbedPane();
         jPanelRejestracja = new javax.swing.JPanel();
         jLabelRejestracja = new javax.swing.JLabel();
@@ -257,12 +260,101 @@ public class logowanie_i_rejestracja extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRejestracjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRejestracjaActionPerformed
-        login();
-        email();
-        pass();
-        conpass();
+        Main();
     }//GEN-LAST:event_jButtonRejestracjaActionPerformed
 
+    private void Main() {
+        //================ Username ==================
+        boolean username = false;
+        if(jTextFieldUsername.getText().length() >=2 && jTextFieldUsername.getText().length() <=20){
+            for(int i=0; i<jTextFieldUsername.getText().length(); i++){
+                char ch = jTextFieldUsername.getText().charAt(i);
+                if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')){
+                    username = true;
+                    jLabelUsernameBlad.setText("Wpisano prawidłowy login"); 
+                }else{
+                    username = false;
+                    jLabelUsernameBlad.setText("Wpisano zły login"); 
+                }
+            }
+        }else{
+            username = false;
+            jLabelUsernameBlad.setText("Wpisano zły login"); 
+        }
+        
+        //================ Email ==================
+        boolean email = false;
+        
+        if(jTextFieldEmail.getText().contains("@")){
+            if(jTextFieldEmail.getText().contains(".")){
+                for(int i=0; i<jTextFieldEmail.getText().length(); i++){
+                    char ch = jTextFieldEmail.getText().charAt(i);
+                    if((((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <='z')) && (ch >= '0' && ch <= '9'))
+                        || (ch >= '0' && ch <= '9') || ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <='z'))){
+                        email = true;
+                        jLabelEmailBlad.setText("Wpisano prawidłowy email"); 
+                    }else{
+                        email = false;
+                        jLabelEmailBlad.setText("Wpisano zły format email");  
+                    }
+                }
+            }else{
+               email = false;
+               jLabelEmailBlad.setText("Wpisano zły format email");  
+            }
+        }else{
+           email = false;
+           jLabelEmailBlad.setText("Wpisano zły format email");  
+        }
+        
+        
+
+        //================ Password ==================
+        boolean password = false;
+        if(jPasswordFieldPass.getText().length() >=4){
+            for(int i=0; i<jPasswordFieldPass.getText().length(); i++){
+                char ch = jPasswordFieldPass.getText().charAt(i);
+            if((((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <='z')) && (ch >= '0' && ch <= '9')) || (ch >= '0' && ch <= '9') || ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <='z'))){
+                    password = true;
+                    jLabelPassBlad.setText("Wpisano prawidłowe hasło"); 
+                }else{
+                    password = false;
+                    jLabelPassBlad.setText("Wpisano złe hasło"); 
+                }
+            }
+        }else{
+            password = false;
+            jLabelPassBlad.setText("Wpisano złe hasło"); 
+        }
+        
+        
+        //================ Confirm Password ==================
+        
+        boolean conpass = false;
+        if(jPasswordFieldPass.getText().equals(jPasswordFieldConPass.getText())){
+            conpass = true;
+            jLabelConPassBlad.setText("Hasła są takie same"); 
+        }else{
+            conpass = false;
+            jLabelConPassBlad.setText("Hasła różnią sie"); 
+        }
+        
+        //================ Zapis ==================
+        FileUtils stf = new FileUtils();
+        String text = jTextFieldUsername.getText().trim()+":"
+                +jTextFieldEmail.getText().trim()+":"
+                +jPasswordFieldPass.getText().trim();
+        
+        if(username == true){
+            if(password == true){
+                if(conpass == true){
+                    if(email == true){
+                    stf.saveToFile(text);
+                    }
+                }
+            }
+        }  
+    }
     /**
      * @param args the command line arguments
      */
@@ -298,36 +390,6 @@ public class logowanie_i_rejestracja extends javax.swing.JFrame {
         });
     }
     
-    private void login(){
-        if(jTextFieldUsername.getText().length() <2 || jTextFieldUsername.getText().length() >20){
-            jLabelUsernameBlad.setText("Wpisano zły login");
-        }else if(jTextFieldUsername.getText().length() >2 || jTextFieldUsername.getText().length() <20){
-            jLabelUsernameBlad.setText("");  
-        }
-        
-        char[] chars = jTextFieldUsername.getText().toCharArray();
-        for (char word : chars) {
-            if(!Character.isLetter(word)) {
-               jLabelUsernameBlad.setText("Wpisano zły login"); 
-            }
-        }  
-    }
-    
-    private void email(){
-        
-    }
-    
-    private void pass(){
-        if(jPasswordFieldPass.getText().length() <4){
-            jLabelPassBlad.setText("Wpisano złe hasło");
-        }else if(jPasswordFieldPass.getText().length() >4){
-            jLabelPassBlad.setText("");  
-        }
-    }
-    
-    private void conpass(){
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRejestracja;
@@ -349,6 +411,7 @@ public class logowanie_i_rejestracja extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelRejestracja;
     private javax.swing.JPasswordField jPasswordFieldConPass;
     private javax.swing.JPasswordField jPasswordFieldPass;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTabbedPane jTabbedPaneRejestracja;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail2;
