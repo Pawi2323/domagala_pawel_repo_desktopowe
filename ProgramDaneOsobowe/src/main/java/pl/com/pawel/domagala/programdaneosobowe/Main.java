@@ -5,6 +5,8 @@
  */
 package pl.com.pawel.domagala.programdaneosobowe;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author domag
@@ -38,7 +40,7 @@ public class Main extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
@@ -90,16 +92,21 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(jList1);
+        jList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(jList);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setText("Dodaj dane");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -188,6 +195,10 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AddToList();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,6 +233,16 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    private void AddToList(){
+        jList.setModel(DLM);
+        DLM.addElement(jTextFieldImie.getText()+" "+
+                jTextFieldNazwisko.getText()+" "+
+                jTextFieldKlasa.getText()+" "+
+                jTextFieldRok.getText());
+    }
+    
+    DefaultListModel DLM = new DefaultListModel();
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -231,7 +252,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextFieldImie;
