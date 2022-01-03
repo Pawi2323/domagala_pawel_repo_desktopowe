@@ -29,6 +29,9 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldImie = new javax.swing.JTextField();
         jTextFieldNazwisko = new javax.swing.JTextField();
@@ -44,7 +47,21 @@ public class Main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
+        jMenuItem1.setText("jMenuItem1");
+        jPopupMenu.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        jPopupMenu.add(jMenuItem2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -199,6 +216,14 @@ public class Main extends javax.swing.JFrame {
         AddToList();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -240,6 +265,9 @@ public class Main extends javax.swing.JFrame {
                 +" "+jTextFieldKlasa.getText() 
                 +" "+jTextFieldRok.getText());
     }
+    private void PopUpMenu(){
+        jPopupMenu.show(this, WIDTH, HEIGHT);
+    }
     
     DefaultListModel DLM = new DefaultListModel();
     
@@ -253,6 +281,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPopupMenu jPopupMenu;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextFieldImie;
