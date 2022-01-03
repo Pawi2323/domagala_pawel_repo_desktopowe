@@ -235,10 +235,10 @@ public class Main extends javax.swing.JFrame {
     }
     private void AddToList(){
         jList.setModel(DLM);
-        DLM.addElement(jTextFieldImie.getText()+" "+
-                jTextFieldNazwisko.getText()+" "+
-                jTextFieldKlasa.getText()+" "+
-                jTextFieldRok.getText());
+        DLM.addElement(jTextFieldImie.getText()
+                +" "+jTextFieldNazwisko.getText()
+                +" "+jTextFieldKlasa.getText() 
+                +" "+jTextFieldRok.getText());
     }
     
     DefaultListModel DLM = new DefaultListModel();
