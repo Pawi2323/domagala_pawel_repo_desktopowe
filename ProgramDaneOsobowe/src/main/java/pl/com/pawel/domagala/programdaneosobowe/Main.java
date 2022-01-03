@@ -5,7 +5,11 @@
  */
 package pl.com.pawel.domagala.programdaneosobowe;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,8 +34,8 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jPopupMenu = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItemEdit = new javax.swing.JMenuItem();
+        jMenuItemDelete = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldImie = new javax.swing.JTextField();
         jTextFieldNazwisko = new javax.swing.JTextField();
@@ -47,11 +51,11 @@ public class Main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
-        jMenuItem1.setText("jMenuItem1");
-        jPopupMenu.add(jMenuItem1);
+        jMenuItemEdit.setText("Edit");
+        jPopupMenu.add(jMenuItemEdit);
 
-        jMenuItem2.setText("jMenuItem2");
-        jPopupMenu.add(jMenuItem2);
+        jMenuItemDelete.setText("Delete");
+        jPopupMenu.add(jMenuItemDelete);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,7 +118,16 @@ public class Main extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList.setComponentPopupMenu(jPopupMenu);
         jList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jListMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jListMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -209,7 +222,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldRokActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //stf.saveToFile();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -217,12 +230,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_formMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseReleased
+
+    private void jListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMousePressed
+        
+    }//GEN-LAST:event_jListMousePressed
+
+    private void jListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListMouseReleased
+        
+    }//GEN-LAST:event_jListMouseReleased
 
     /**
      * @param args the command line arguments
@@ -260,16 +281,31 @@ public class Main extends javax.swing.JFrame {
     }
     private void AddToList(){
         jList.setModel(DLM);
+        ArrayList<String> dane = new ArrayList<String>();
         DLM.addElement(jTextFieldImie.getText()
                 +" "+jTextFieldNazwisko.getText()
                 +" "+jTextFieldKlasa.getText() 
                 +" "+jTextFieldRok.getText());
     }
     private void PopUpMenu(){
-        jPopupMenu.show(this, WIDTH, HEIGHT);
+        jList.addMouseListener(new MouseAdapter(){
+            public void mousePressed(MouseEvent e) {check(e);}
+            public void mouseReleased(MouseEvent e) {check(e);}
+            
+            public void check(MouseEvent e){
+                if(e.isPopupTrigger()){
+                    jList.setSelectedIndex(jList.locationToIndex(e.getPoint()));
+                    JOptionPane.showMessageDialog(null,
+                        "Selected index"+jList.getSelectedIndex()
+                        +" value: "+jList.getSelectedValue());       
+                    jPopupMenu.show(jList, e.getX(), e.getY());
+                }
+            }
+        });
     }
     
-    DefaultListModel DLM = new DefaultListModel();
+    DefaultListModel DLM = new DefaultListModel<>();
+    SaveToFile stf = new SaveToFile();
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -281,8 +317,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenuItem jMenuItemEdit;
     private javax.swing.JPopupMenu jPopupMenu;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
