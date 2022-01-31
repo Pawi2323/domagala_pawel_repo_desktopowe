@@ -5,17 +5,27 @@
  */
 package pl.com.pawel.domagala.paweldomagalagridlayout;
 
+import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author domag
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main
-     */
+    double liczba1;
+    double liczba2;
+    double wynik;
+    String typ;
+    
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,119 +37,588 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jPanelWys = new javax.swing.JPanel();
+        pd_jLabelWprow = new javax.swing.JLabel();
+        pd_jLabelWprowWysw = new javax.swing.JLabel();
+        pd_jSeparator = new javax.swing.JSeparator();
+        pd_jLabelWynik = new javax.swing.JLabel();
+        jPanelDzial = new javax.swing.JPanel();
+        pd_jButtonClear = new javax.swing.JButton();
+        pd_jButtonPierw = new javax.swing.JButton();
+        pd_jButtonPotega = new javax.swing.JButton();
+        pd_jButtonDziel = new javax.swing.JButton();
+        pd_jButton7 = new javax.swing.JButton();
+        pd_jButton8 = new javax.swing.JButton();
+        pd_jButton9 = new javax.swing.JButton();
+        pd_jButtonMnoz = new javax.swing.JButton();
+        pd_jButton4 = new javax.swing.JButton();
+        pd_jButton5 = new javax.swing.JButton();
+        pd_jButton6 = new javax.swing.JButton();
+        pd_jButtonMinus = new javax.swing.JButton();
+        pd_jButton3 = new javax.swing.JButton();
+        pd_jButton2 = new javax.swing.JButton();
+        pd_jButton1 = new javax.swing.JButton();
+        pd_jButtonPlus = new javax.swing.JButton();
+        pd_jButtonPusty = new javax.swing.JButton();
+        pd_jButton0 = new javax.swing.JButton();
+        pd_jButtonPrzec = new javax.swing.JButton();
+        pd_jButtonWynik = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        pd_jMenuPlik = new javax.swing.JMenu();
+        pd_jCheckBoxMenuHistoria = new javax.swing.JCheckBoxMenuItem();
+        pd_jMenuItemZamknij = new javax.swing.JMenuItem();
+        pd_jMenuTools = new javax.swing.JMenu();
+        jMenuDni = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jPanel1.setLayout(new java.awt.GridLayout(6, 0));
+        jPanelWys.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setText("C");
-        jPanel1.add(jButton1);
+        pd_jLabelWprow.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWprow.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
+        pd_jLabelWprow.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWprow.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton2.setText("√");
-        jPanel1.add(jButton2);
+        pd_jLabelWprowWysw.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWprowWysw.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jLabelWprowWysw.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jLabelWprowWysw.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWprowWysw.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton3.setText("^");
-        jPanel1.add(jButton3);
+        pd_jSeparator.setForeground(new java.awt.Color(51, 51, 51));
 
-        jButton4.setText("/");
-        jPanel1.add(jButton4);
+        pd_jLabelWynik.setBackground(new java.awt.Color(0, 0, 0));
+        pd_jLabelWynik.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        pd_jLabelWynik.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jLabelWynik.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        pd_jLabelWynik.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton5.setText("7");
-        jPanel1.add(jButton5);
-
-        jButton6.setText("8");
-        jPanel1.add(jButton6);
-
-        jButton7.setText("9");
-        jPanel1.add(jButton7);
-
-        jButton8.setText("*");
-        jPanel1.add(jButton8);
-
-        jButton9.setText("4");
-        jPanel1.add(jButton9);
-
-        jButton10.setText("5");
-        jPanel1.add(jButton10);
-
-        jButton11.setText("6");
-        jPanel1.add(jButton11);
-
-        jButton12.setText("-");
-        jPanel1.add(jButton12);
-
-        jButton13.setText("1");
-        jPanel1.add(jButton13);
-
-        jButton14.setText("2");
-        jPanel1.add(jButton14);
-
-        jButton15.setText("3");
-        jPanel1.add(jButton15);
-
-        jButton16.setText("+");
-        jPanel1.add(jButton16);
-        jPanel1.add(jButton17);
-
-        jButton18.setText("0");
-        jPanel1.add(jButton18);
-
-        jButton19.setText(".");
-        jPanel1.add(jButton19);
-
-        jButton20.setText("=");
-        jPanel1.add(jButton20);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelWysLayout = new javax.swing.GroupLayout(jPanelWys);
+        jPanelWys.setLayout(jPanelWysLayout);
+        jPanelWysLayout.setHorizontalGroup(
+            jPanelWysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelWysLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelWysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pd_jLabelWynik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pd_jLabelWprowWysw, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelWysLayout.createSequentialGroup()
+                        .addGroup(jPanelWysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pd_jLabelWprow, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pd_jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 122, Short.MAX_VALUE)
+        jPanelWysLayout.setVerticalGroup(
+            jPanelWysLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelWysLayout.createSequentialGroup()
+                .addComponent(pd_jLabelWprow, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pd_jLabelWprowWysw, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pd_jLabelWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pd_jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanelDzial.setBackground(new java.awt.Color(0, 0, 0));
+        jPanelDzial.setLayout(new java.awt.GridLayout(5, 4, 5, 5));
+
+        pd_jButtonClear.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonClear.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonClear.setForeground(new java.awt.Color(255, 102, 0));
+        pd_jButtonClear.setText("C");
+        pd_jButtonClear.setToolTipText("");
+        pd_jButtonClear.setBorderPainted(false);
+        pd_jButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonClearActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonClear);
+
+        pd_jButtonPierw.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPierw.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPierw.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonPierw.setText("√");
+        pd_jButtonPierw.setToolTipText("");
+        pd_jButtonPierw.setBorderPainted(false);
+        pd_jButtonPierw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPierwActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonPierw);
+
+        pd_jButtonPotega.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPotega.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPotega.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonPotega.setText("xˣ");
+        pd_jButtonPotega.setToolTipText("");
+        pd_jButtonPotega.setBorderPainted(false);
+        pd_jButtonPotega.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPotegaActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonPotega);
+
+        pd_jButtonDziel.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonDziel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonDziel.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonDziel.setText("/");
+        pd_jButtonDziel.setToolTipText("");
+        pd_jButtonDziel.setBorderPainted(false);
+        pd_jButtonDziel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonDzielActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonDziel);
+
+        pd_jButton7.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton7.setText("7");
+        pd_jButton7.setToolTipText("");
+        pd_jButton7.setBorderPainted(false);
+        pd_jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton7ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton7);
+
+        pd_jButton8.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton8.setText("8");
+        pd_jButton8.setToolTipText("");
+        pd_jButton8.setBorderPainted(false);
+        pd_jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton8ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton8);
+
+        pd_jButton9.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton9.setText("9");
+        pd_jButton9.setToolTipText("");
+        pd_jButton9.setBorderPainted(false);
+        pd_jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton9ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton9);
+
+        pd_jButtonMnoz.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonMnoz.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonMnoz.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonMnoz.setText("*");
+        pd_jButtonMnoz.setToolTipText("");
+        pd_jButtonMnoz.setBorderPainted(false);
+        pd_jButtonMnoz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonMnozActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonMnoz);
+
+        pd_jButton4.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton4.setText("4");
+        pd_jButton4.setToolTipText("");
+        pd_jButton4.setBorderPainted(false);
+        pd_jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton4ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton4);
+
+        pd_jButton5.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton5.setText("5");
+        pd_jButton5.setToolTipText("");
+        pd_jButton5.setBorderPainted(false);
+        pd_jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton5ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton5);
+
+        pd_jButton6.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton6.setText("6");
+        pd_jButton6.setToolTipText("");
+        pd_jButton6.setBorderPainted(false);
+        pd_jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton6ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton6);
+
+        pd_jButtonMinus.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonMinus.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonMinus.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonMinus.setText("-");
+        pd_jButtonMinus.setToolTipText("");
+        pd_jButtonMinus.setBorderPainted(false);
+        pd_jButtonMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonMinusActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonMinus);
+
+        pd_jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton3.setText("3");
+        pd_jButton3.setToolTipText("");
+        pd_jButton3.setBorderPainted(false);
+        pd_jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton3ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton3);
+
+        pd_jButton2.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton2.setText("2");
+        pd_jButton2.setToolTipText("");
+        pd_jButton2.setBorderPainted(false);
+        pd_jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton2ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton2);
+
+        pd_jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton1.setText("1");
+        pd_jButton1.setToolTipText("");
+        pd_jButton1.setBorderPainted(false);
+        pd_jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton1ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton1);
+
+        pd_jButtonPlus.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPlus.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPlus.setForeground(new java.awt.Color(102, 255, 51));
+        pd_jButtonPlus.setText("+");
+        pd_jButtonPlus.setToolTipText("");
+        pd_jButtonPlus.setBorderPainted(false);
+        pd_jButtonPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPlusActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonPlus);
+
+        pd_jButtonPusty.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPusty.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPusty.setForeground(new java.awt.Color(51, 255, 0));
+        pd_jButtonPusty.setToolTipText("");
+        pd_jButtonPusty.setBorderPainted(false);
+        jPanelDzial.add(pd_jButtonPusty);
+
+        pd_jButton0.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButton0.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButton0.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButton0.setText("0");
+        pd_jButton0.setToolTipText("");
+        pd_jButton0.setBorderPainted(false);
+        pd_jButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButton0ActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButton0);
+
+        pd_jButtonPrzec.setBackground(new java.awt.Color(51, 51, 51));
+        pd_jButtonPrzec.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonPrzec.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButtonPrzec.setText(".");
+        pd_jButtonPrzec.setToolTipText("");
+        pd_jButtonPrzec.setBorderPainted(false);
+        pd_jButtonPrzec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonPrzecActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonPrzec);
+
+        pd_jButtonWynik.setBackground(new java.awt.Color(51, 153, 0));
+        pd_jButtonWynik.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pd_jButtonWynik.setForeground(new java.awt.Color(255, 255, 255));
+        pd_jButtonWynik.setText("=");
+        pd_jButtonWynik.setToolTipText("");
+        pd_jButtonWynik.setBorderPainted(false);
+        pd_jButtonWynik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jButtonWynikActionPerformed(evt);
+            }
+        });
+        jPanelDzial.add(pd_jButtonWynik);
+
+        pd_jMenuPlik.setText("Plik");
+
+        pd_jCheckBoxMenuHistoria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        pd_jCheckBoxMenuHistoria.setSelected(true);
+        pd_jCheckBoxMenuHistoria.setText("Zapis historii działań");
+        pd_jMenuPlik.add(pd_jCheckBoxMenuHistoria);
+
+        pd_jMenuItemZamknij.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        pd_jMenuItemZamknij.setText("Zamknij");
+        pd_jMenuItemZamknij.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pd_jMenuItemZamknijActionPerformed(evt);
+            }
+        });
+        pd_jMenuPlik.add(pd_jMenuItemZamknij);
+
+        jMenuBar1.add(pd_jMenuPlik);
+
+        pd_jMenuTools.setText("Tools");
+
+        jMenuDni.setText("Ile dni od obliczenia");
+        jMenuDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDniActionPerformed(evt);
+            }
+        });
+        pd_jMenuTools.add(jMenuDni);
+
+        jMenuBar1.add(pd_jMenuTools);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelDzial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelWys, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelWys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelDzial, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pd_jButtonMnozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonMnozActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="*";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"*");
+    }//GEN-LAST:event_pd_jButtonMnozActionPerformed
+
+    private void pd_jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonClearActionPerformed
+        pd_jLabelWprow.setText("");
+        pd_jLabelWynik.setText("");
+        pd_jLabelWprowWysw.setText("");
+    }//GEN-LAST:event_pd_jButtonClearActionPerformed
+
+    private void pd_jMenuItemZamknijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jMenuItemZamknijActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_pd_jMenuItemZamknijActionPerformed
+
+    private void pd_jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton9ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton9.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"9");
+    }//GEN-LAST:event_pd_jButton9ActionPerformed
+
+    private void pd_jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton8ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton8.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"8");
+    }//GEN-LAST:event_pd_jButton8ActionPerformed
+
+    private void pd_jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton7ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton7.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"7");
+    }//GEN-LAST:event_pd_jButton7ActionPerformed
+
+    private void pd_jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton6ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton6.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"6");
+    }//GEN-LAST:event_pd_jButton6ActionPerformed
+
+    private void pd_jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton5ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton5.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"5");
+    }//GEN-LAST:event_pd_jButton5ActionPerformed
+
+    private void pd_jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton4ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton4.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"4");
+    }//GEN-LAST:event_pd_jButton4ActionPerformed
+
+    private void pd_jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton3ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton3.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"3");
+    }//GEN-LAST:event_pd_jButton3ActionPerformed
+
+    private void pd_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton2ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton2.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"2");
+    }//GEN-LAST:event_pd_jButton2ActionPerformed
+
+    private void pd_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton1ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton1.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"1");
+    }//GEN-LAST:event_pd_jButton1ActionPerformed
+
+    private void pd_jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButton0ActionPerformed
+        String wpisana = pd_jLabelWprow.getText()+pd_jButton0.getText();
+        pd_jLabelWprow.setText(wpisana);
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"0");
+    }//GEN-LAST:event_pd_jButton0ActionPerformed
+
+    private void pd_jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPlusActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="+";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"+");
+    }//GEN-LAST:event_pd_jButtonPlusActionPerformed
+
+    private void pd_jButtonMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonMinusActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="-";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"-");
+    }//GEN-LAST:event_pd_jButtonMinusActionPerformed
+
+    private void pd_jButtonDzielActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonDzielActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="/";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"/");
+    }//GEN-LAST:event_pd_jButtonDzielActionPerformed
+
+    private void pd_jButtonPotegaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPotegaActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="^";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"^");
+    }//GEN-LAST:event_pd_jButtonPotegaActionPerformed
+
+    private void pd_jButtonPierwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPierwActionPerformed
+        liczba1 = Double.parseDouble(pd_jLabelWprow.getText());
+        pd_jLabelWprow.setText("");
+        typ="√";
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+"√");
+    }//GEN-LAST:event_pd_jButtonPierwActionPerformed
+
+    private void pd_jButtonWynikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonWynikActionPerformed
+        String a;
+        if(typ == "+"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 + liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "-"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 - liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "*"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 * liczba2;
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }else if(typ == "/"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = liczba1 / liczba2;
+            a = String.format("%.2f",wynik);
+            try{
+                if(liczba2 == 0 || liczba1 == 0){
+                    pd_jLabelWynik.setText("Błąd");
+                }else{
+                    pd_jLabelWynik.setText(a);
+                }
+            }catch(Exception ex) {
+            System.out.println(ex.toString());
+            }
+        }else if(typ == "√"){
+            wynik = Math.sqrt(liczba1);
+            a = String.format("%.2f",wynik);
+            try{
+                if(liczba1 == 0){
+                    pd_jLabelWynik.setText("Błąd");
+                }else{
+                    pd_jLabelWynik.setText(a);
+                }
+            }catch(Exception ex) {
+            System.out.println(ex.toString());
+            }
+        }else if(typ == "^"){
+            liczba2 = Double.parseDouble(pd_jLabelWprow.getText());
+            wynik = Math.pow(liczba1,liczba2);
+            a = String.format("%.2f",wynik);
+            pd_jLabelWynik.setText(a);
+        }
+    }//GEN-LAST:event_pd_jButtonWynikActionPerformed
+
+    private void pd_jButtonPrzecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pd_jButtonPrzecActionPerformed
+        pd_jLabelWprow.setText(pd_jLabelWprow.getText()+".");
+        pd_jLabelWprowWysw.setText(pd_jLabelWprowWysw.getText()+".");
+    }//GEN-LAST:event_pd_jButtonPrzecActionPerformed
+
+    private void jMenuDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDniActionPerformed
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        String info = "\n";
+        while(!info.equals("ok")){
+            String data = JOptionPane.showInputDialog("Wprowadz date w formacie dd MM yyyy (np. 01 01 2021)"+""+info);
+            //System.out.println(data);
+            if(data != null && data.length()==10){
+                LocalDate ldNow = LocalDate.now();
+                try{
+                    LocalDate ldInput = LocalDate.parse(data, formatter);//Tekst -> LocalDate przez format
+                    //System.out.println(ldNow+" "+ldInput);
+                    long days = ChronoUnit.DAYS.between(ldInput, ldNow);
+                    //System.out.println("Ilość dni między datami: "+days);
+                    JOptionPane.showMessageDialog(rootPane, ""+days*(-1), "Ilość dni", HEIGHT);
+                    info = "ok";
+                }catch(DateTimeParseException ex){
+                    info = "Wprowadzono zły format daty";
+                }
+            }else{
+                info = "ok";
+            }
+        }
+    }//GEN-LAST:event_jMenuDniActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +646,21 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -175,29 +669,40 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuDni;
+    private javax.swing.JPanel jPanelDzial;
+    private javax.swing.JPanel jPanelWys;
+    private javax.swing.JButton pd_jButton0;
+    private javax.swing.JButton pd_jButton1;
+    private javax.swing.JButton pd_jButton2;
+    private javax.swing.JButton pd_jButton3;
+    private javax.swing.JButton pd_jButton4;
+    private javax.swing.JButton pd_jButton5;
+    private javax.swing.JButton pd_jButton6;
+    private javax.swing.JButton pd_jButton7;
+    private javax.swing.JButton pd_jButton8;
+    private javax.swing.JButton pd_jButton9;
+    private javax.swing.JButton pd_jButtonClear;
+    private javax.swing.JButton pd_jButtonDziel;
+    private javax.swing.JButton pd_jButtonMinus;
+    private javax.swing.JButton pd_jButtonMnoz;
+    private javax.swing.JButton pd_jButtonPierw;
+    private javax.swing.JButton pd_jButtonPlus;
+    private javax.swing.JButton pd_jButtonPotega;
+    private javax.swing.JButton pd_jButtonPrzec;
+    private javax.swing.JButton pd_jButtonPusty;
+    private javax.swing.JButton pd_jButtonWynik;
+    private javax.swing.JCheckBoxMenuItem pd_jCheckBoxMenuHistoria;
+    private javax.swing.JLabel pd_jLabelWprow;
+    private javax.swing.JLabel pd_jLabelWprowWysw;
+    private javax.swing.JLabel pd_jLabelWynik;
+    private javax.swing.JMenuItem pd_jMenuItemZamknij;
+    private javax.swing.JMenu pd_jMenuPlik;
+    private javax.swing.JMenu pd_jMenuTools;
+    private javax.swing.JSeparator pd_jSeparator;
     // End of variables declaration//GEN-END:variables
 }
