@@ -13,9 +13,12 @@ public class main extends javax.swing.JFrame {
     /**
      * Creates new form main
      */
+    private DownloadFromHTML dfhtml;
+    
     public main() {
         initComponents();
-        jTFwynik.setEditable(false);
+        jTFwynikSell.setEditable(false);
+        dfhtml = new DownloadFromHTML();
     }
 
     /**
@@ -27,13 +30,21 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         MainLabel = new javax.swing.JLabel();
         jTFzloty = new javax.swing.JTextField();
-        jCBwaluta = new javax.swing.JComboBox<>();
+        jCBwalutaSell = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTFwynik = new javax.swing.JTextField();
+        jBsell = new javax.swing.JButton();
+        jTFwynikSell = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jTFwaluta = new javax.swing.JTextField();
+        MainLabel1 = new javax.swing.JLabel();
+        jBbuy = new javax.swing.JButton();
+        jTFwynikBuy = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jCBwalutaBuy = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,13 +66,13 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jCBwaluta.setBackground(new java.awt.Color(70, 73, 76));
-        jCBwaluta.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
-        jCBwaluta.setForeground(new java.awt.Color(255, 255, 255));
-        jCBwaluta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "EUR", "GBP", "CHR", "JPY" }));
-        jCBwaluta.addActionListener(new java.awt.event.ActionListener() {
+        jCBwalutaSell.setBackground(new java.awt.Color(70, 73, 76));
+        jCBwalutaSell.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jCBwalutaSell.setForeground(new java.awt.Color(255, 255, 255));
+        jCBwalutaSell.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "EUR", "GBP", "CHR", "JPY" }));
+        jCBwalutaSell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBwalutaActionPerformed(evt);
+                jCBwalutaSellActionPerformed(evt);
             }
         });
 
@@ -70,23 +81,23 @@ public class main extends javax.swing.JFrame {
         jLabel1.setText("zł         na");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        jButton1.setBackground(new java.awt.Color(78, 80, 81));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Oblicz");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBsell.setBackground(new java.awt.Color(78, 80, 81));
+        jBsell.setForeground(new java.awt.Color(255, 255, 255));
+        jBsell.setText("Oblicz");
+        jBsell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBsellActionPerformed(evt);
             }
         });
 
-        jTFwynik.setBackground(new java.awt.Color(70, 73, 76));
-        jTFwynik.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
-        jTFwynik.setForeground(new java.awt.Color(255, 255, 255));
-        jTFwynik.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTFwynik.setText("-");
-        jTFwynik.addActionListener(new java.awt.event.ActionListener() {
+        jTFwynikSell.setBackground(new java.awt.Color(70, 73, 76));
+        jTFwynikSell.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jTFwynikSell.setForeground(new java.awt.Color(255, 255, 255));
+        jTFwynikSell.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTFwynikSell.setText("-");
+        jTFwynikSell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFwynikActionPerformed(evt);
+                jTFwynikSellActionPerformed(evt);
             }
         });
 
@@ -94,49 +105,131 @@ public class main extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTFzloty, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addGap(27, 27, 27)
-                        .addComponent(jCBwaluta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jTFwynik, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(MainLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTFzloty, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCBwalutaSell, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBsell, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTFwynikSell, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(MainLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCBwaluta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTFzloty, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jTFwynik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFzloty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCBwalutaSell, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBsell)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFwynikSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.addTab("Sprzedarz", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(60, 63, 66));
+
+        jTFwaluta.setBackground(new java.awt.Color(70, 73, 76));
+        jTFwaluta.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jTFwaluta.setForeground(new java.awt.Color(255, 255, 255));
+        jTFwaluta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTFwaluta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFwalutaActionPerformed(evt);
+            }
+        });
+
+        MainLabel1.setFont(new java.awt.Font("Z003", 1, 48)); // NOI18N
+        MainLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        MainLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MainLabel1.setText("Waluciarz");
+        MainLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jBbuy.setBackground(new java.awt.Color(78, 80, 81));
+        jBbuy.setForeground(new java.awt.Color(255, 255, 255));
+        jBbuy.setText("Oblicz");
+        jBbuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuyActionPerformed(evt);
+            }
+        });
+
+        jTFwynikBuy.setBackground(new java.awt.Color(70, 73, 76));
+        jTFwynikBuy.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jTFwynikBuy.setForeground(new java.awt.Color(255, 255, 255));
+        jTFwynikBuy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTFwynikBuy.setText("-");
+        jTFwynikBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFwynikBuyActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("na        zł");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jCBwalutaBuy.setBackground(new java.awt.Color(70, 73, 76));
+        jCBwalutaBuy.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
+        jCBwalutaBuy.setForeground(new java.awt.Color(255, 255, 255));
+        jCBwalutaBuy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "EUR", "GBP", "CHR", "JPY" }));
+        jCBwalutaBuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBwalutaBuyActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jCBwalutaBuy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MainLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFwynikBuy, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(jTFwaluta, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(jBbuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(MainLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jTFwaluta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCBwalutaBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBbuy)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFwynikBuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Kupno", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -146,17 +239,33 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFzlotyActionPerformed
 
-    private void jCBwalutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBwalutaActionPerformed
+    private void jCBwalutaSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBwalutaSellActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBwalutaActionPerformed
+    }//GEN-LAST:event_jCBwalutaSellActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jBsellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsellActionPerformed
+        dfhtml.setWybor(true);
+    }//GEN-LAST:event_jBsellActionPerformed
 
-    private void jTFwynikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwynikActionPerformed
+    private void jTFwynikSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwynikSellActionPerformed
         
-    }//GEN-LAST:event_jTFwynikActionPerformed
+    }//GEN-LAST:event_jTFwynikSellActionPerformed
+
+    private void jTFwalutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwalutaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFwalutaActionPerformed
+
+    private void jCBwalutaBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBwalutaBuyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBwalutaBuyActionPerformed
+
+    private void jBbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuyActionPerformed
+        dfhtml.setWybor(false);
+    }//GEN-LAST:event_jBbuyActionPerformed
+
+    private void jTFwynikBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwynikBuyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFwynikBuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,11 +304,19 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MainLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jCBwaluta;
+    private javax.swing.JLabel MainLabel1;
+    private javax.swing.JButton jBbuy;
+    private javax.swing.JButton jBsell;
+    private javax.swing.JComboBox<String> jCBwalutaBuy;
+    private javax.swing.JComboBox<String> jCBwalutaSell;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTFwynik;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTFwaluta;
+    private javax.swing.JTextField jTFwynikBuy;
+    private javax.swing.JTextField jTFwynikSell;
     private javax.swing.JTextField jTFzloty;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
