@@ -26,6 +26,7 @@ public class DownloadFromHTML {
             HttpResponse response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String result = response.body().toString();
             if(wybor){
+                
             }
         }catch(Exception e){
         }
