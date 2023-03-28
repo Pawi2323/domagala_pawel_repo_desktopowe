@@ -135,7 +135,7 @@
                     <StringItem index="0" value="USD"/>
                     <StringItem index="1" value="EUR"/>
                     <StringItem index="2" value="GBP"/>
-                    <StringItem index="3" value="CHR"/>
+                    <StringItem index="3" value="CHF"/>
                     <StringItem index="4" value="JPY"/>
                   </StringArray>
                 </Property>

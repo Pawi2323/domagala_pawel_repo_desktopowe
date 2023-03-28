@@ -14,11 +14,15 @@ public class main extends javax.swing.JFrame {
      * Creates new form main
      */
     private DownloadFromHTML dfhtml;
+    private saveToFile stf;
     
     public main() {
         initComponents();
+        setLocationRelativeTo(null);
         jTFwynikSell.setEditable(false);
+        jTFwynikBuy.setEditable(false);
         dfhtml = new DownloadFromHTML();
+        stf = new saveToFile();
     }
 
     /**
@@ -69,7 +73,7 @@ public class main extends javax.swing.JFrame {
         jCBwalutaSell.setBackground(new java.awt.Color(70, 73, 76));
         jCBwalutaSell.setFont(new java.awt.Font("Z003", 0, 24)); // NOI18N
         jCBwalutaSell.setForeground(new java.awt.Color(255, 255, 255));
-        jCBwalutaSell.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "EUR", "GBP", "CHR", "JPY" }));
+        jCBwalutaSell.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "EUR", "GBP", "CHF", "JPY" }));
         jCBwalutaSell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBwalutaSellActionPerformed(evt);
@@ -245,6 +249,7 @@ public class main extends javax.swing.JFrame {
 
     private void jBsellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsellActionPerformed
         dfhtml.setWybor(true);
+        sell();
     }//GEN-LAST:event_jBsellActionPerformed
 
     private void jTFwynikSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwynikSellActionPerformed
@@ -261,6 +266,7 @@ public class main extends javax.swing.JFrame {
 
     private void jBbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuyActionPerformed
         dfhtml.setWybor(false);
+        buy();
     }//GEN-LAST:event_jBbuyActionPerformed
 
     private void jTFwynikBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFwynikBuyActionPerformed
@@ -300,6 +306,24 @@ public class main extends javax.swing.JFrame {
                 new main().setVisible(true);
             }
         });
+    }
+    
+    private void sell(){
+        float amount = Float.parseFloat(jTFzloty.getText());
+        String currency = jCBwalutaSell.getSelectedItem().toString();
+        float price = dfhtml.DFHTML(currency);
+        float result = amount*price;
+        jTFwynikSell.setText(""+result);
+        stf.saveToFile("sell", currency, amount, result, price);
+    }
+    
+    private void buy(){
+        float amount = Float.parseFloat(jTFwaluta.getText());
+        String currency = jCBwalutaBuy.getSelectedItem().toString();
+        float price = dfhtml.DFHTML(currency);
+        float result = amount*price;
+        jTFwynikBuy.setText(""+result);
+        stf.saveToFile("buy", currency, amount, result, price);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
